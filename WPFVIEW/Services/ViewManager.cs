@@ -45,8 +45,8 @@ namespace WPFVIEW.Services
             _MainView!.AnimatedContentControl.PagePlace.Content = null;
             _MainView!.AnimatedContentControl.PagePlace.Content = iPage;
 
-            _MainView!.AnimatedContentControl.MetroTablItem.IsSelected = false;
-            _MainView!.AnimatedContentControl.MetroTablItem.IsSelected = true;
+            _MainView!.AnimatedContentControl.MetroTabItem.IsSelected = false;
+            _MainView!.AnimatedContentControl.MetroTabItem.IsSelected = true;
 
             if (iFullPage)
             {
