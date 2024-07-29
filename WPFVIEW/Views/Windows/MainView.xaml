@@ -1,0 +1,39 @@
+﻿<MW:MetroWindow x:Class="WPFVIEW.Views.Windows.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFVIEW.Views.Windows"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:VM="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
+        xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:Ctrl="clr-namespace:WPFVIEW.Components"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=VM:MainViewModel}"
+        Title="MainView" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Name="BtnHome" Content="Home Seite" 
+                    FontSize="20" Height="40" FontWeight="ExtraBold" 
+                    Command="{Binding OpenPageCommand}" 
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}" Cursor="Hand">
+            </Button>
+            <Button Name="BtnAdmin" Content="Admin Seite" 
+                    FontSize="20" Height="40" FontWeight="ExtraBold" 
+                    Command="{Binding OpenPageCommand}" 
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}">
+            </Button>
+        </StackPanel>
+        
+        <Grid Grid.Row="1">
+            <Ctrl:AnimatedContentControl x:Name="AnimatedContentControl" />
+        </Grid>
+    </Grid>
+</MW:MetroWindow>
